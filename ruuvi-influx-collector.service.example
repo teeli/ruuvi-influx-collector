@@ -1,0 +1,24 @@
+#
+# RuuviTag InfluxDB Collector systemd service example
+#
+
+[Unit]
+Description=RuuviTag InfluxDB Collector
+After=network.target
+
+[Service]
+Type=simple
+Restart=on-failure
+# Change these to your user/group
+User=user
+Group=group
+# Change this to the application path
+WorkingDirectory=/path/to/ruuvi-influx-collector
+ExecStart=yarn start
+
+# Use this if you're using NVM (change path to point to your nvm directory)
+#Environment=NODE_VERSION=14
+#ExecStart=/path/to/nvm/nvm-exec src/index.js
+
+[Install]
+WantedBy=multi-user.target

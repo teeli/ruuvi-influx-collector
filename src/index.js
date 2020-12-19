@@ -4,6 +4,8 @@ const {isString, isNumber} = require('lodash');
 const config = require('./config');
 const InfluxWriter = require('./writers/InfluxWriter');
 
+console.log('Running RuuviTag InfluxDB Collector');
+
 const writer = new InfluxWriter(config.influx);
 
 /**
