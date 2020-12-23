@@ -18,7 +18,7 @@ ExecStart=yarn start
 
 # Use this if you're using NVM (change path to point to your nvm directory)
 #Environment=NODE_VERSION=14
-#ExecStart=/path/to/nvm/nvm-exec src/index.js
+#ExecStart=/path/to/nvm/nvm-exec node src/index.js
 
 [Install]
 WantedBy=multi-user.target
