@@ -13,6 +13,7 @@ const writer = new InfluxWriter(config.influx);
  */
 ruuvi.on('found', (tag) => {
     const options = {};
+    let sample = -1;
 
     // set tag alias in options if defined in config
     if (config.aliases[tag.address]) {
@@ -20,7 +21,9 @@ ruuvi.on('found', (tag) => {
     }
 
     tag.on('updated', (data) => {
-        writer.write(tag, data, options);
+        if ((++sample * config.samplingRate) % 1 === 0) {
+            writer.write(tag, data, options);
+        }
     });
 });
 
