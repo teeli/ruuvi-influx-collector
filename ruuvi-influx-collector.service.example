@@ -17,7 +17,7 @@ WorkingDirectory=/path/to/ruuvi-influx-collector
 ExecStart=yarn start
 
 # Use this if you're using NVM (change path to point to your nvm directory)
-#Environment=NODE_VERSION=14
+#Environment=NODE_VERSION=16.20.0
 #ExecStart=/path/to/nvm/nvm-exec node src/index.js
 
 [Install]
