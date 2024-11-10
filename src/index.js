@@ -16,8 +16,9 @@ ruuvi.on('found', (tag) => {
     const options = {};
 
     // set tag alias in options if defined in config
-    if (config.aliases[tag.address]) {
-        options.alias = config.aliases[tag.address];
+    const alias = config.aliases[tag.address.toLowerCase()] ?? config.aliases[tag.address.toUpperCase()]
+    if (alias) {
+        options.alias = alias;
     }
 
     tag.on('updated', (data) => {
