@@ -5,9 +5,9 @@ Get measurements from RuuviTag(s) and save them to InfluxDB 2.0.
 ## Get started
 
 1) Clone this repository
-2) Run `yarn install`
+2) Run `npm install`
 3) Copy `.env.example` as `.env` and add your InfluxDB details.
-4) Start collecting by running `yarn start`
+4) Start collecting by running `npm start`
 
 ### Aliases
 
